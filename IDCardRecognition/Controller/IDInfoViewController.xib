@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IDInfoViewController">
+            <connections>
+                <outlet property="IDImageView" destination="Hmr-v4-JJX" id="Cmv-iM-dUR"/>
+                <outlet property="IDNumLabel" destination="4eN-Rz-uON" id="1Fh-wZ-AcP"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的大陆第二代身份证" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfh-nA-VG3">
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hmr-v4-JJX">
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Hmr-v4-JJX" secondAttribute="height" multiplier="343:230" id="OiV-bY-7e5"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请检查您的身份证号码是否正确" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJi-Vo-83y">
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="110110199010101100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eN-Rz-uON">
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <color key="textColor" red="0.28958930704015129" green="0.74628838350256044" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1h-wl-cfy">
+                    <color key="backgroundColor" red="1" green="0.60071486234664917" blue="0.20166948437690735" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="L1h-wl-cfy" secondAttribute="height" multiplier="172:45" id="27d-F5-zqZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="错误，重新拍">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="shootAgain:" destination="-1" eventType="touchUpInside" id="gSL-xj-cOt"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYV-yo-1Pj">
+                    <color key="backgroundColor" red="1" green="0.60071486234664917" blue="0.20166948437690735" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="WYV-yo-1Pj" secondAttribute="height" multiplier="172:45" id="wa0-W4-BpM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="正确，下一步">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="nextStep:" destination="-1" eventType="touchUpInside" id="OkT-j5-fwQ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="L1h-wl-cfy" secondAttribute="bottom" constant="60" id="3JV-Nj-SyL"/>
+                <constraint firstItem="4eN-Rz-uON" firstAttribute="trailing" secondItem="mfh-nA-VG3" secondAttribute="trailing" id="6lW-cQ-Vnh"/>
+                <constraint firstItem="WYV-yo-1Pj" firstAttribute="width" secondItem="L1h-wl-cfy" secondAttribute="width" id="Aqc-27-VQw"/>
+                <constraint firstItem="Hmr-v4-JJX" firstAttribute="leading" secondItem="mfh-nA-VG3" secondAttribute="leading" id="B93-E6-2CW"/>
+                <constraint firstItem="WYV-yo-1Pj" firstAttribute="leading" secondItem="L1h-wl-cfy" secondAttribute="trailing" constant="10" id="DJ1-kA-bwQ"/>
+                <constraint firstItem="Hmr-v4-JJX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="JQ3-Nt-EsK"/>
+                <constraint firstItem="WYV-yo-1Pj" firstAttribute="trailing" secondItem="mfh-nA-VG3" secondAttribute="trailing" id="KAX-Xo-foz"/>
+                <constraint firstItem="4eN-Rz-uON" firstAttribute="leading" secondItem="mfh-nA-VG3" secondAttribute="leading" id="MZh-dg-UCv"/>
+                <constraint firstItem="Hmr-v4-JJX" firstAttribute="top" secondItem="mfh-nA-VG3" secondAttribute="bottom" constant="15" id="PYC-0m-FWY"/>
+                <constraint firstItem="dJi-Vo-83y" firstAttribute="leading" secondItem="mfh-nA-VG3" secondAttribute="leading" id="QTx-b9-hQM"/>
+                <constraint firstItem="WYV-yo-1Pj" firstAttribute="top" secondItem="L1h-wl-cfy" secondAttribute="top" id="R48-4E-iQQ"/>
+                <constraint firstAttribute="trailing" secondItem="Hmr-v4-JJX" secondAttribute="trailing" constant="10" id="X9S-0H-xqj"/>
+                <constraint firstItem="dJi-Vo-83y" firstAttribute="top" secondItem="Hmr-v4-JJX" secondAttribute="bottom" constant="20" id="c3z-WP-njd"/>
+                <constraint firstItem="mfh-nA-VG3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="120" id="eVR-km-mED"/>
+                <constraint firstItem="dJi-Vo-83y" firstAttribute="trailing" secondItem="mfh-nA-VG3" secondAttribute="trailing" id="gra-sL-3HK"/>
+                <constraint firstItem="Hmr-v4-JJX" firstAttribute="trailing" secondItem="mfh-nA-VG3" secondAttribute="trailing" id="gui-QU-Vm4"/>
+                <constraint firstItem="4eN-Rz-uON" firstAttribute="top" secondItem="dJi-Vo-83y" secondAttribute="bottom" constant="10" id="tng-aI-lLz"/>
+                <constraint firstItem="WYV-yo-1Pj" firstAttribute="height" secondItem="L1h-wl-cfy" secondAttribute="height" id="v8Z-w7-4OE"/>
+                <constraint firstItem="L1h-wl-cfy" firstAttribute="leading" secondItem="mfh-nA-VG3" secondAttribute="leading" id="vhc-9F-gkE"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

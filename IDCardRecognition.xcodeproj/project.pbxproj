@@ -1,0 +1,662 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		211981501E712D6700B1E607 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2119814F1E712D6700B1E607 /* main.m */; };
+		211981531E712D6700B1E607 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 211981521E712D6700B1E607 /* AppDelegate.m */; };
+		2119815B1E712D6700B1E607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2119815A1E712D6700B1E607 /* Assets.xcassets */; };
+		2119815E1E712D6700B1E607 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2119815C1E712D6700B1E607 /* LaunchScreen.storyboard */; };
+		211981691E712D6700B1E607 /* IDCardRecognitionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 211981681E712D6700B1E607 /* IDCardRecognitionTests.m */; };
+		211981741E712D6700B1E607 /* IDCardRecognitionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 211981731E712D6700B1E607 /* IDCardRecognitionUITests.m */; };
+		211981841E712F0500B1E607 /* RectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 211981831E712F0500B1E607 /* RectManager.m */; };
+		211981881E712F1400B1E607 /* IDInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 211981871E712F1400B1E607 /* IDInfo.m */; };
+		2119818C1E712F2500B1E607 /* LHSIDCardScaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2119818B1E712F2500B1E607 /* LHSIDCardScaningView.m */; };
+		211981961E712F3500B1E607 /* AVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2119818F1E712F3500B1E607 /* AVCaptureViewController.m */; };
+		211981971E712F3500B1E607 /* IDAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 211981911E712F3500B1E607 /* IDAuthViewController.m */; };
+		211981981E712F3500B1E607 /* IDAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 211981921E712F3500B1E607 /* IDAuthViewController.xib */; };
+		211981991E712F3500B1E607 /* IDInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 211981941E712F3500B1E607 /* IDInfoViewController.m */; };
+		2119819A1E712F3500B1E607 /* IDInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 211981951E712F3500B1E607 /* IDInfoViewController.xib */; };
+		211981A01E712F4700B1E607 /* UIAlertController+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 2119819D1E712F4700B1E607 /* UIAlertController+Extend.m */; };
+		211981A11E712F4700B1E607 /* UIImage+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 2119819F1E712F4700B1E607 /* UIImage+Extend.m */; };
+		211981AC1E7132BE00B1E607 /* zocr0.lib in Resources */ = {isa = PBXBuildFile; fileRef = 211981A91E7132BE00B1E607 /* zocr0.lib */; };
+		211981AD1E7132BE00B1E607 /* libexidcardios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 211981AB1E7132BE00B1E607 /* libexidcardios.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		211981651E712D6700B1E607 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 211981431E712D6700B1E607 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2119814A1E712D6700B1E607;
+			remoteInfo = IDCardRecognition;
+		};
+		211981701E712D6700B1E607 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 211981431E712D6700B1E607 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2119814A1E712D6700B1E607;
+			remoteInfo = IDCardRecognition;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2119814B1E712D6700B1E607 /* IDCardRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDCardRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2119814F1E712D6700B1E607 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		211981511E712D6700B1E607 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		211981521E712D6700B1E607 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2119815A1E712D6700B1E607 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2119815D1E712D6700B1E607 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2119815F1E712D6700B1E607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		211981641E712D6700B1E607 /* IDCardRecognitionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDCardRecognitionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		211981681E712D6700B1E607 /* IDCardRecognitionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDCardRecognitionTests.m; sourceTree = "<group>"; };
+		2119816A1E712D6700B1E607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2119816F1E712D6700B1E607 /* IDCardRecognitionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDCardRecognitionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		211981731E712D6700B1E607 /* IDCardRecognitionUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDCardRecognitionUITests.m; sourceTree = "<group>"; };
+		211981751E712D6700B1E607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		211981821E712F0500B1E607 /* RectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectManager.h; sourceTree = "<group>"; };
+		211981831E712F0500B1E607 /* RectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectManager.m; sourceTree = "<group>"; };
+		211981861E712F1400B1E607 /* IDInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDInfo.h; sourceTree = "<group>"; };
+		211981871E712F1400B1E607 /* IDInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDInfo.m; sourceTree = "<group>"; };
+		2119818A1E712F2500B1E607 /* LHSIDCardScaningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHSIDCardScaningView.h; sourceTree = "<group>"; };
+		2119818B1E712F2500B1E607 /* LHSIDCardScaningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHSIDCardScaningView.m; sourceTree = "<group>"; };
+		2119818E1E712F3500B1E607 /* AVCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCaptureViewController.h; sourceTree = "<group>"; };
+		2119818F1E712F3500B1E607 /* AVCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCaptureViewController.m; sourceTree = "<group>"; };
+		211981901E712F3500B1E607 /* IDAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDAuthViewController.h; sourceTree = "<group>"; };
+		211981911E712F3500B1E607 /* IDAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDAuthViewController.m; sourceTree = "<group>"; };
+		211981921E712F3500B1E607 /* IDAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IDAuthViewController.xib; sourceTree = "<group>"; };
+		211981931E712F3500B1E607 /* IDInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDInfoViewController.h; sourceTree = "<group>"; };
+		211981941E712F3500B1E607 /* IDInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDInfoViewController.m; sourceTree = "<group>"; };
+		211981951E712F3500B1E607 /* IDInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IDInfoViewController.xib; sourceTree = "<group>"; };
+		2119819C1E712F4700B1E607 /* UIAlertController+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Extend.h"; sourceTree = "<group>"; };
+		2119819D1E712F4700B1E607 /* UIAlertController+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Extend.m"; sourceTree = "<group>"; };
+		2119819E1E712F4700B1E607 /* UIImage+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extend.h"; sourceTree = "<group>"; };
+		2119819F1E712F4700B1E607 /* UIImage+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extend.m"; sourceTree = "<group>"; };
+		211981A71E7132BE00B1E607 /* commondef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commondef.h; sourceTree = "<group>"; };
+		211981A91E7132BE00B1E607 /* zocr0.lib */ = {isa = PBXFileReference; lastKnownFileType = file; path = zocr0.lib; sourceTree = "<group>"; };
+		211981AA1E7132BE00B1E607 /* excards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = excards.h; sourceTree = "<group>"; };
+		211981AB1E7132BE00B1E607 /* libexidcardios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libexidcardios.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		211981481E712D6700B1E607 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				211981AD1E7132BE00B1E607 /* libexidcardios.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		211981611E712D6700B1E607 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2119816C1E712D6700B1E607 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		211981421E712D6700B1E607 = {
+			isa = PBXGroup;
+			children = (
+				2119814D1E712D6700B1E607 /* IDCardRecognition */,
+				211981671E712D6700B1E607 /* IDCardRecognitionTests */,
+				211981721E712D6700B1E607 /* IDCardRecognitionUITests */,
+				2119814C1E712D6700B1E607 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2119814C1E712D6700B1E607 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2119814B1E712D6700B1E607 /* IDCardRecognition.app */,
+				211981641E712D6700B1E607 /* IDCardRecognitionTests.xctest */,
+				2119816F1E712D6700B1E607 /* IDCardRecognitionUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2119814D1E712D6700B1E607 /* IDCardRecognition */ = {
+			isa = PBXGroup;
+			children = (
+				211981511E712D6700B1E607 /* AppDelegate.h */,
+				211981521E712D6700B1E607 /* AppDelegate.m */,
+				211981811E712F0500B1E607 /* Tool */,
+				2119819B1E712F4700B1E607 /* Category */,
+				211981851E712F1400B1E607 /* Model */,
+				211981891E712F2500B1E607 /* View */,
+				2119818D1E712F3500B1E607 /* Controller */,
+				2119815A1E712D6700B1E607 /* Assets.xcassets */,
+				2119815C1E712D6700B1E607 /* LaunchScreen.storyboard */,
+				2119815F1E712D6700B1E607 /* Info.plist */,
+				2119814E1E712D6700B1E607 /* Supporting Files */,
+			);
+			path = IDCardRecognition;
+			sourceTree = "<group>";
+		};
+		2119814E1E712D6700B1E607 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				211981A61E7132BE00B1E607 /* libexidcard */,
+				2119814F1E712D6700B1E607 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		211981671E712D6700B1E607 /* IDCardRecognitionTests */ = {
+			isa = PBXGroup;
+			children = (
+				211981681E712D6700B1E607 /* IDCardRecognitionTests.m */,
+				2119816A1E712D6700B1E607 /* Info.plist */,
+			);
+			path = IDCardRecognitionTests;
+			sourceTree = "<group>";
+		};
+		211981721E712D6700B1E607 /* IDCardRecognitionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				211981731E712D6700B1E607 /* IDCardRecognitionUITests.m */,
+				211981751E712D6700B1E607 /* Info.plist */,
+			);
+			path = IDCardRecognitionUITests;
+			sourceTree = "<group>";
+		};
+		211981811E712F0500B1E607 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				211981821E712F0500B1E607 /* RectManager.h */,
+				211981831E712F0500B1E607 /* RectManager.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		211981851E712F1400B1E607 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				211981861E712F1400B1E607 /* IDInfo.h */,
+				211981871E712F1400B1E607 /* IDInfo.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		211981891E712F2500B1E607 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2119818A1E712F2500B1E607 /* LHSIDCardScaningView.h */,
+				2119818B1E712F2500B1E607 /* LHSIDCardScaningView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2119818D1E712F3500B1E607 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2119818E1E712F3500B1E607 /* AVCaptureViewController.h */,
+				2119818F1E712F3500B1E607 /* AVCaptureViewController.m */,
+				211981901E712F3500B1E607 /* IDAuthViewController.h */,
+				211981911E712F3500B1E607 /* IDAuthViewController.m */,
+				211981921E712F3500B1E607 /* IDAuthViewController.xib */,
+				211981931E712F3500B1E607 /* IDInfoViewController.h */,
+				211981941E712F3500B1E607 /* IDInfoViewController.m */,
+				211981951E712F3500B1E607 /* IDInfoViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2119819B1E712F4700B1E607 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				2119819C1E712F4700B1E607 /* UIAlertController+Extend.h */,
+				2119819D1E712F4700B1E607 /* UIAlertController+Extend.m */,
+				2119819E1E712F4700B1E607 /* UIImage+Extend.h */,
+				2119819F1E712F4700B1E607 /* UIImage+Extend.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		211981A61E7132BE00B1E607 /* libexidcard */ = {
+			isa = PBXGroup;
+			children = (
+				211981A71E7132BE00B1E607 /* commondef.h */,
+				211981A81E7132BE00B1E607 /* dicts */,
+				211981AA1E7132BE00B1E607 /* excards.h */,
+				211981AB1E7132BE00B1E607 /* libexidcardios.a */,
+			);
+			path = libexidcard;
+			sourceTree = "<group>";
+		};
+		211981A81E7132BE00B1E607 /* dicts */ = {
+			isa = PBXGroup;
+			children = (
+				211981A91E7132BE00B1E607 /* zocr0.lib */,
+			);
+			path = dicts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2119814A1E712D6700B1E607 /* IDCardRecognition */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 211981781E712D6700B1E607 /* Build configuration list for PBXNativeTarget "IDCardRecognition" */;
+			buildPhases = (
+				211981471E712D6700B1E607 /* Sources */,
+				211981481E712D6700B1E607 /* Frameworks */,
+				211981491E712D6700B1E607 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IDCardRecognition;
+			productName = IDCardRecognition;
+			productReference = 2119814B1E712D6700B1E607 /* IDCardRecognition.app */;
+			productType = "com.apple.product-type.application";
+		};
+		211981631E712D6700B1E607 /* IDCardRecognitionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2119817B1E712D6700B1E607 /* Build configuration list for PBXNativeTarget "IDCardRecognitionTests" */;
+			buildPhases = (
+				211981601E712D6700B1E607 /* Sources */,
+				211981611E712D6700B1E607 /* Frameworks */,
+				211981621E712D6700B1E607 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				211981661E712D6700B1E607 /* PBXTargetDependency */,
+			);
+			name = IDCardRecognitionTests;
+			productName = IDCardRecognitionTests;
+			productReference = 211981641E712D6700B1E607 /* IDCardRecognitionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2119816E1E712D6700B1E607 /* IDCardRecognitionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2119817E1E712D6700B1E607 /* Build configuration list for PBXNativeTarget "IDCardRecognitionUITests" */;
+			buildPhases = (
+				2119816B1E712D6700B1E607 /* Sources */,
+				2119816C1E712D6700B1E607 /* Frameworks */,
+				2119816D1E712D6700B1E607 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				211981711E712D6700B1E607 /* PBXTargetDependency */,
+			);
+			name = IDCardRecognitionUITests;
+			productName = IDCardRecognitionUITests;
+			productReference = 2119816F1E712D6700B1E607 /* IDCardRecognitionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		211981431E712D6700B1E607 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = zhongfeng;
+				TargetAttributes = {
+					2119814A1E712D6700B1E607 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = CNSWV668NZ;
+						ProvisioningStyle = Automatic;
+					};
+					211981631E712D6700B1E607 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = CNSWV668NZ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2119814A1E712D6700B1E607;
+					};
+					2119816E1E712D6700B1E607 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = CNSWV668NZ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2119814A1E712D6700B1E607;
+					};
+				};
+			};
+			buildConfigurationList = 211981461E712D6700B1E607 /* Build configuration list for PBXProject "IDCardRecognition" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 211981421E712D6700B1E607;
+			productRefGroup = 2119814C1E712D6700B1E607 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2119814A1E712D6700B1E607 /* IDCardRecognition */,
+				211981631E712D6700B1E607 /* IDCardRecognitionTests */,
+				2119816E1E712D6700B1E607 /* IDCardRecognitionUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		211981491E712D6700B1E607 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2119819A1E712F3500B1E607 /* IDInfoViewController.xib in Resources */,
+				2119815E1E712D6700B1E607 /* LaunchScreen.storyboard in Resources */,
+				2119815B1E712D6700B1E607 /* Assets.xcassets in Resources */,
+				211981AC1E7132BE00B1E607 /* zocr0.lib in Resources */,
+				211981981E712F3500B1E607 /* IDAuthViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		211981621E712D6700B1E607 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2119816D1E712D6700B1E607 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		211981471E712D6700B1E607 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				211981A11E712F4700B1E607 /* UIImage+Extend.m in Sources */,
+				211981881E712F1400B1E607 /* IDInfo.m in Sources */,
+				211981841E712F0500B1E607 /* RectManager.m in Sources */,
+				2119818C1E712F2500B1E607 /* LHSIDCardScaningView.m in Sources */,
+				211981A01E712F4700B1E607 /* UIAlertController+Extend.m in Sources */,
+				211981531E712D6700B1E607 /* AppDelegate.m in Sources */,
+				211981501E712D6700B1E607 /* main.m in Sources */,
+				211981961E712F3500B1E607 /* AVCaptureViewController.m in Sources */,
+				211981971E712F3500B1E607 /* IDAuthViewController.m in Sources */,
+				211981991E712F3500B1E607 /* IDInfoViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		211981601E712D6700B1E607 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				211981691E712D6700B1E607 /* IDCardRecognitionTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2119816B1E712D6700B1E607 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				211981741E712D6700B1E607 /* IDCardRecognitionUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		211981661E712D6700B1E607 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2119814A1E712D6700B1E607 /* IDCardRecognition */;
+			targetProxy = 211981651E712D6700B1E607 /* PBXContainerItemProxy */;
+		};
+		211981711E712D6700B1E607 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2119814A1E712D6700B1E607 /* IDCardRecognition */;
+			targetProxy = 211981701E712D6700B1E607 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2119815C1E712D6700B1E607 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2119815D1E712D6700B1E607 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		211981761E712D6700B1E607 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		211981771E712D6700B1E607 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		211981791E712D6700B1E607 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CNSWV668NZ;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = IDCardRecognition/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/IDCardRecognition/libexidcard",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = zhongfeng.IDCardRecognition;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2119817A1E712D6700B1E607 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CNSWV668NZ;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = IDCardRecognition/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/IDCardRecognition/libexidcard",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = zhongfeng.IDCardRecognition;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2119817C1E712D6700B1E607 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = CNSWV668NZ;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = IDCardRecognitionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zhongfeng.IDCardRecognitionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IDCardRecognition.app/IDCardRecognition";
+			};
+			name = Debug;
+		};
+		2119817D1E712D6700B1E607 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = CNSWV668NZ;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = IDCardRecognitionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zhongfeng.IDCardRecognitionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IDCardRecognition.app/IDCardRecognition";
+			};
+			name = Release;
+		};
+		2119817F1E712D6700B1E607 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = CNSWV668NZ;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = IDCardRecognitionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zhongfeng.IDCardRecognitionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = IDCardRecognition;
+			};
+			name = Debug;
+		};
+		211981801E712D6700B1E607 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = CNSWV668NZ;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = IDCardRecognitionUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zhongfeng.IDCardRecognitionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = IDCardRecognition;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		211981461E712D6700B1E607 /* Build configuration list for PBXProject "IDCardRecognition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				211981761E712D6700B1E607 /* Debug */,
+				211981771E712D6700B1E607 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		211981781E712D6700B1E607 /* Build configuration list for PBXNativeTarget "IDCardRecognition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				211981791E712D6700B1E607 /* Debug */,
+				2119817A1E712D6700B1E607 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2119817B1E712D6700B1E607 /* Build configuration list for PBXNativeTarget "IDCardRecognitionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2119817C1E712D6700B1E607 /* Debug */,
+				2119817D1E712D6700B1E607 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2119817E1E712D6700B1E607 /* Build configuration list for PBXNativeTarget "IDCardRecognitionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2119817F1E712D6700B1E607 /* Debug */,
+				211981801E712D6700B1E607 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 211981431E712D6700B1E607 /* Project object */;
+}

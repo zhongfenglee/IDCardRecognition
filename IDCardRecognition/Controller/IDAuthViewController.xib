@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IDAuthViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nb-kd-yNR">
+                    <string key="text">请拍摄您的大陆第二代身份证原件
+（避免表面反光）</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.48238962888717651" green="0.47837376594543457" blue="0.48240691423416138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="idcard_first" translatesAutoresizingMaskIntoConstraints="NO" id="p0l-5P-Myn">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="p0l-5P-Myn" secondAttribute="height" multiplier="355:224" id="jRm-AH-HBb"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvA-P2-d21">
+                    <color key="backgroundColor" red="1" green="0.60071486234664917" blue="0.20166948437690735" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="OvA-P2-d21" secondAttribute="height" multiplier="343:45" id="9DT-sl-Y13"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="立即拍摄">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="shoot:" destination="-1" eventType="touchUpInside" id="0VP-zV-uyO"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="1Nb-kd-yNR" firstAttribute="leading" secondItem="p0l-5P-Myn" secondAttribute="leading" id="F6a-4D-a4B"/>
+                <constraint firstItem="1Nb-kd-yNR" firstAttribute="leading" secondItem="OvA-P2-d21" secondAttribute="leading" id="JH1-LX-qNY"/>
+                <constraint firstItem="p0l-5P-Myn" firstAttribute="top" secondItem="1Nb-kd-yNR" secondAttribute="bottom" constant="30" id="Kkh-vw-fFm"/>
+                <constraint firstAttribute="bottom" secondItem="OvA-P2-d21" secondAttribute="bottom" constant="60" id="Qk4-Nm-gT5"/>
+                <constraint firstItem="1Nb-kd-yNR" firstAttribute="trailing" secondItem="OvA-P2-d21" secondAttribute="trailing" id="Rzs-pX-UN1"/>
+                <constraint firstAttribute="trailing" secondItem="p0l-5P-Myn" secondAttribute="trailing" constant="10" id="ZLb-Fe-HGx"/>
+                <constraint firstItem="p0l-5P-Myn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="d2A-dT-QR3"/>
+                <constraint firstItem="p0l-5P-Myn" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="g1C-rb-qLe"/>
+                <constraint firstItem="1Nb-kd-yNR" firstAttribute="trailing" secondItem="p0l-5P-Myn" secondAttribute="trailing" id="mR4-9y-E4I"/>
+            </constraints>
+            <point key="canvasLocation" x="-513.5" y="-226.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="idcard_first" width="283" height="179"/>
+    </resources>
+</document>
