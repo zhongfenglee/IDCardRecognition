@@ -3,6 +3,10 @@
 
 可快速读出身份证上的信息（姓名、性别、民族、住址、身份证号码）并截取身份证照片
 
+![](https://github.com/zhongfenglee/IDCardRecognition/blob/master/Screenshot/1.PNG?raw=true)
+![](https://github.com/zhongfenglee/IDCardRecognition/blob/master/Screenshot/2.PNG?raw=true)
+![](https://github.com/zhongfenglee/IDCardRecognition/blob/master/Screenshot/3.PNG?raw=true)
+
 若想将该功能集成到你开发的app里:
 
 1、请把Category、Tool、libexidcard、Model、View、Controller这六个文件夹拖入到你的项目里；
