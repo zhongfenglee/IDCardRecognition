@@ -35,4 +35,4 @@ Privacy - Photo Library Usage Description       是否允许访问相册
 
 ![ENABLE_BITCODE Error 解决方法](https://github.com/zhongfenglee/IDCardRecognition/blob/master/Screenshot/ENABLE_BITCODE%20Error%20解决方法.png?raw=true)
 
-5、大功告成，😄 Run! 
+5、大功告成，使用真机，Run! 😄 
