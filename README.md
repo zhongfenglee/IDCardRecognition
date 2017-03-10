@@ -3,7 +3,7 @@
 ## 说明
 一个近乎完整的可识别中国身份证信息的Demo
 
-可快速读出身份证上的信息（姓名、性别、民族、住址、身份证号码）并截取到身份证图像
+可自动快速读出身份证上的信息（姓名、性别、民族、住址、身份证号码）并截取到身份证图像
 
 ![首页](https://github.com/zhongfenglee/IDCardRecognition/blob/master/Screenshot/1.PNG?raw=true)
 ![拍摄界面](https://github.com/zhongfenglee/IDCardRecognition/blob/master/Screenshot/2.PNG?raw=true)
