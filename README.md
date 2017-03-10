@@ -27,7 +27,7 @@ Privacy - Camera Usage Description      是否允许访问相机
 
 Privacy - Photo Library Usage Description       是否允许访问相册
 
-4、运行程序，可能会报错：
+4、运行程序，可能会报 ENABLE_BITCODE 错误：
 
 ![ENABLE_BITCODE Error](https://github.com/zhongfenglee/IDCardRecognition/blob/master/Screenshot/ENABLE_BITCODE%20Error.png?raw=true)
 
