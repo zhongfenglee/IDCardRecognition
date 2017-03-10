@@ -20,6 +20,7 @@
 1、请把Category、Tool、libexidcard、Model、View、Controller这六个文件夹拖入到你的项目里；
 
 2、将idcard_first.png、idcard_first_head.png、idcard_back.png、navigationbar_back.png拖入到你的项目中，或在相应代码处替换为你的素材；
+
 3、在你的项目的Info.plist文件中，添加权限描述（Key   Value）
 
 Privacy - Camera Usage Description      是否允许访问相机
