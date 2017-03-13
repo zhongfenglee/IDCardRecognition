@@ -450,17 +450,18 @@
                 }
             }
             
-            if (iDInfo.num.length) {
+            if (iDInfo.num.length) {// 读取到身份证信息，实例化出IDInfo对象后，截取身份证的有效区域，获取到图像
                 CGRect effectRect = [RectManager getEffectImageRect:CGSizeMake(width, height)];
                 CGRect rect = [RectManager getGuideFrame:effectRect];
                 
                 UIImage *image = [UIImage getImageStream:imageBuffer];
                 UIImage *subImage = [UIImage getSubImage:rect inImage:image];
                 
+                // 推出IDInfoVC（展示身份证信息的控制器）
                 IDInfoViewController *IDInfoVC = [[IDInfoViewController alloc] init];
 
-                IDInfoVC.IDInfo = iDInfo;
-                IDInfoVC.IDImage = subImage;
+                IDInfoVC.IDInfo = iDInfo;// 身份证信息
+                IDInfoVC.IDImage = subImage;// 身份证图像
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.navigationController pushViewController:IDInfoVC animated:YES];

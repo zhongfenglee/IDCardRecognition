@@ -203,11 +203,11 @@
 		2119818D1E712F3500B1E607 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2119818E1E712F3500B1E607 /* AVCaptureViewController.h */,
-				2119818F1E712F3500B1E607 /* AVCaptureViewController.m */,
 				211981901E712F3500B1E607 /* IDAuthViewController.h */,
 				211981911E712F3500B1E607 /* IDAuthViewController.m */,
 				211981921E712F3500B1E607 /* IDAuthViewController.xib */,
+				2119818E1E712F3500B1E607 /* AVCaptureViewController.h */,
+				2119818F1E712F3500B1E607 /* AVCaptureViewController.m */,
 				211981931E712F3500B1E607 /* IDInfoViewController.h */,
 				211981941E712F3500B1E607 /* IDInfoViewController.m */,
 				211981951E712F3500B1E607 /* IDInfoViewController.xib */,
