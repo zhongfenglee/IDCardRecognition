@@ -35,4 +35,14 @@ Privacy - Photo Library Usage Description       是否允许访问相册
 
 ![ENABLE_BITCODE Error 解决方法](https://github.com/zhongfenglee/IDCardRecognition/blob/master/Screenshot/ENABLE_BITCODE%20Error%20解决方法.png?raw=true)
 
-5、大功告成，使用真机，Run! 😄 
+5、在你的项目中的相应处，首先：
+
+`#import "IDAuthViewController.h"`
+
+在使用该功能的地方：
+
+`IDAuthViewController *IDAuthVC = [[IDAuthViewController alloc] init];`
+
+`[self.navigationController pushViewController:IDAuthVC animated:YES];`
+
+6、大功告成，使用真机，Run! 😄 
