@@ -85,7 +85,7 @@
     
     // 人像
     UIImageView *headIV = [[UIImageView alloc] initWithFrame:_facePathRect];
-    headIV.image = [UIImage imageNamed:@"idcard_first_head_2"];
+    headIV.image = [UIImage imageNamed:@"idcard_first_head"];
     headIV.transform = CGAffineTransformMakeRotation(M_PI * 0.5);
     headIV.contentMode = UIViewContentModeScaleAspectFill;
     [self addSubview:headIV];
