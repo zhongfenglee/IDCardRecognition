@@ -5,9 +5,9 @@
 
 可自动快速读出身份证上的信息（姓名、性别、民族、住址、身份证号码）并截取到身份证图像
 
-![首页](https://github.com/zhongfenglee/IDCardRecognition/blob/master/Screenshot/1.PNG?raw=true)
-![拍摄界面](https://github.com/zhongfenglee/IDCardRecognition/blob/master/Screenshot/2.PNG?raw=true)
-![读取到信息](https://github.com/zhongfenglee/IDCardRecognition/blob/master/Screenshot/3.PNG?raw=true)
+![IDAuthViewController-开始验证身份证](https://github.com/zhongfenglee/IDCardRecognition/blob/master/Screenshot/1.PNG?raw=true)
+![AVCaptureViewController-拍摄界面](https://github.com/zhongfenglee/IDCardRecognition/blob/master/Screenshot/2.PNG?raw=true)
+![IDInfoViewController-身份证信息界面](https://github.com/zhongfenglee/IDCardRecognition/blob/master/Screenshot/3.PNG?raw=true)
 ## 原理
 经实践发现，只要身份证号码处于摄像头预览图层中时，即不用完全对准身份证也可以读取到身份证号码，但此时截取到的身份证图像并不完整。
 
