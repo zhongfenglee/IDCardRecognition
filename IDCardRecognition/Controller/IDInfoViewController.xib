@@ -19,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的大陆第二代身份证" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfh-nA-VG3">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的身份证" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfh-nA-VG3">
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -29,7 +29,7 @@
                         <constraint firstAttribute="width" secondItem="Hmr-v4-JJX" secondAttribute="height" multiplier="343:230" id="OiV-bY-7e5"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请检查您的身份证号码是否正确" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJi-Vo-83y">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请核对身份证号码，确认无误" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJi-Vo-83y">
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -91,7 +91,7 @@
                 <constraint firstItem="WYV-yo-1Pj" firstAttribute="top" secondItem="L1h-wl-cfy" secondAttribute="top" id="R48-4E-iQQ"/>
                 <constraint firstAttribute="trailing" secondItem="Hmr-v4-JJX" secondAttribute="trailing" constant="10" id="X9S-0H-xqj"/>
                 <constraint firstItem="dJi-Vo-83y" firstAttribute="top" secondItem="Hmr-v4-JJX" secondAttribute="bottom" constant="20" id="c3z-WP-njd"/>
-                <constraint firstItem="mfh-nA-VG3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="120" id="eVR-km-mED"/>
+                <constraint firstItem="mfh-nA-VG3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="eVR-km-mED"/>
                 <constraint firstItem="dJi-Vo-83y" firstAttribute="trailing" secondItem="mfh-nA-VG3" secondAttribute="trailing" id="gra-sL-3HK"/>
                 <constraint firstItem="Hmr-v4-JJX" firstAttribute="trailing" secondItem="mfh-nA-VG3" secondAttribute="trailing" id="gui-QU-Vm4"/>
                 <constraint firstItem="4eN-Rz-uON" firstAttribute="top" secondItem="dJi-Vo-83y" secondAttribute="bottom" constant="10" id="tng-aI-lLz"/>

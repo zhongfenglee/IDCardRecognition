@@ -64,7 +64,7 @@
     fillLayer.path = path.CGPath;
     fillLayer.fillRule = kCAFillRuleEvenOdd;
     fillLayer.fillColor = [UIColor blackColor].CGColor;
-    fillLayer.opacity = 0.7;
+    fillLayer.opacity = 0.6;
     
     [self.layer addSublayer:fillLayer];
     
@@ -76,7 +76,7 @@
     // 提示标签
     CGPoint center = self.center;
     center.x = CGRectGetMaxX(_IDCardScanningWindowLayer.frame) + 20;
-    [self addTipLabelWithText:@"请拍摄身份证人像面，尝试对齐拍摄框边缘" center:center];
+    [self addTipLabelWithText:@"将身份证人像面置于此区域内，头像对准，扫描" center:center];
     
     /*
     CGPoint center1 = (CGPoint){CGRectGetMidX(_facePathRect), CGRectGetMidY(_facePathRect)};

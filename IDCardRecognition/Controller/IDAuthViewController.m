@@ -30,13 +30,13 @@
     // 自定义全局的barButtonItem外观
     UIBarButtonItem *barButtonItemAppearance = [UIBarButtonItem appearance];
     // 将文字减小并设其颜色为透明以隐藏
-    [barButtonItemAppearance setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:0.1], NSForegroundColorAttributeName: [UIColor clearColor]} forState:UIControlStateNormal];
+    [barButtonItemAppearance setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:0.1], NSForegroundColorAttributeName: [UIColor clearColor]} forState:UIControlStateNormal];
     
     // 设置图片
     // 获取全局的navigationBar外观
     UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
     // 获取原图
-    UIImage *image = [[UIImage imageNamed:@"navigationbar_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *image = [[UIImage imageNamed:@"nav_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     // 修改navigationBar上的返回按钮的图片，注意：这两个属性要同时设置
     navigationBarAppearance.backIndicatorImage = image;
     navigationBarAppearance.backIndicatorTransitionMaskImage = image;
@@ -45,7 +45,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"身份信息验证";
+    self.navigationItem.title = @"身份证识别";
 //    self.navigationController.delegate = self;
 }
 

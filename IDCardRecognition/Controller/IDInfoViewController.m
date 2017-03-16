@@ -43,7 +43,7 @@
 
 #pragma mark - 正确，下一步
 - (IBAction)nextStep:(UIButton *)sender {
-    
+    NSLog(@"经用户核对，身份证号码正确，那就进行下一步，比如身份证图像或号码经加密后，传递给后台");
 }
 
 /*
