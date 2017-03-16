@@ -15,4 +15,6 @@
 + (UIImage *)getImageStream:(CVImageBufferRef)imageBuffer;
 + (UIImage *)getSubImage:(CGRect)rect inImage:(UIImage*)image;
 
+-(UIImage *)originalImage;
+
 @end

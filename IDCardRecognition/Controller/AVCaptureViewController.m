@@ -43,6 +43,9 @@
 // 队列
 @property (nonatomic,strong) dispatch_queue_t queue;
 
+// 是否打开手电筒
+@property (nonatomic,assign,getter = isTorchOn) BOOL torchOn;
+
 @end
 
 @implementation AVCaptureViewController
@@ -201,6 +204,33 @@
     }
 }
 
+#pragma mark - 打开手电筒
+-(void)turnTorchOn:(bool)on {
+    self.torchOn = !_torchOn;
+    
+    if (self.device) {
+        if ([self.device hasTorch] && [self.device hasFlash]){
+            [self.device lockForConfiguration:nil];
+            
+            if (_torchOn) {
+                self.navigationItem.rightBarButtonItem.image = [[UIImage imageNamed:@"nav_torch_on"] originalImage];
+                [self.device setTorchMode:AVCaptureTorchModeOn];
+                [self.device setFlashMode:AVCaptureFlashModeOn];
+            } else {
+                self.navigationItem.rightBarButtonItem.image = [[UIImage imageNamed:@"nav_torch_off"] originalImage];
+                [self.device setTorchMode:AVCaptureTorchModeOff];
+                [self.device setFlashMode:AVCaptureFlashModeOff];
+            }
+            
+            [self.device unlockForConfiguration];
+        }else{
+            NSLog(@"初始化失败");
+        }
+
+    }else{
+        NSLog(@"没有闪光设备");
+    }
+}
 #pragma mark - view即将出现时
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -211,6 +241,10 @@
     
     // 每次展现AVCaptureViewController的界面时，都检查摄像头使用权限
     [self checkAuthorizationStatus];
+    
+    // 关闭手电筒
+    self.torchOn = NO;
+    self.navigationItem.rightBarButtonItem.image = [[UIImage imageNamed:@"nav_torch_off"] originalImage];
 }
 
 #pragma mark - view即将消失时
@@ -222,6 +256,10 @@
 //    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor]}];
     
     [self stopSession];
+    
+    // 关闭手电筒
+    self.torchOn = NO;
+    self.navigationItem.rightBarButtonItem.image = [[UIImage imageNamed:@"nav_torch_off"] originalImage];
 }
 
 - (void)viewDidLoad {
@@ -260,6 +298,16 @@
     
     // 添加关闭按钮
     [self addCloseButton];
+    
+    // 添加手电筒Item
+    [self addTorchItem];
+}
+
+#pragma mark - 添加手电筒Item
+-(void)addTorchItem {
+    // 默认关闭手电筒
+    self.torchOn = NO;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"nav_torch_off"] originalImage] style:UIBarButtonItemStylePlain target:self action:@selector(turnTorchOn:)];
 }
 
 #pragma mark - 添加关闭按钮

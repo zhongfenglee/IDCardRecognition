@@ -79,4 +79,8 @@
     return smallImage;
 }
 
+-(UIImage *)originalImage {
+    return [self imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+}
+
 @end
