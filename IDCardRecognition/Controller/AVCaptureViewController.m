@@ -50,6 +50,25 @@
 
 @implementation AVCaptureViewController
 
+#pragma mark - 检测是模拟器还是真机
+#if TARGET_IPHONE_SIMULATOR
+// 是模拟器的话，提示“请使用真机测试！！！”
+-(void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.navigationItem.title = @"扫描身份证";
+    
+    __weak __typeof__(self) weakSelf = self;
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"返回" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [weakSelf.navigationController popViewControllerAnimated:YES];
+    }];
+    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"模拟器没有摄像设备" message:@"请使用真机测试！！！" okAction:okAction cancelAction:nil];
+    
+    [self presentViewController:alertC animated:YES completion:nil];
+}
+
+#else
+
 #pragma mark - 懒加载
 #pragma mark device
 -(AVCaptureDevice *)device {
@@ -256,7 +275,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
     self.navigationItem.title = @"扫描身份证";
     
     // 初始化rect
@@ -589,5 +607,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#endif
 
 @end
