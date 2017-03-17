@@ -9,7 +9,7 @@
 #import "IDAuthViewController.h"
 #import "AVCaptureViewController.h"
 
-@interface IDAuthViewController () ///<>
+@interface IDAuthViewController ()
 
 @end
 
@@ -57,7 +57,6 @@
 #pragma mark - 立即拍摄
 - (IBAction)shoot:(UIButton *)sender {
     AVCaptureViewController *AVCaptureVC = [[AVCaptureViewController alloc] init];
-    
     [self.navigationController pushViewController:AVCaptureVC animated:YES];
 }
 
