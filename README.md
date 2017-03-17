@@ -46,7 +46,8 @@ Privacy - Photo Library Usage Description       是否允许访问相册
 `[self.navigationController pushViewController:IDAuthVC animated:YES];`
 
 6、大功告成，使用真机，Run! 😄 
-
+## 特别鸣谢
+本Demo扫描身份证的代码参考自[mxl123/IDAndBankCard](https://github.com/mxl123/IDAndBankCard)，非常感谢[mxl123](https://github.com/mxl123)的开源，再次表示致谢和敬意！
 ## 联系我
 如果您觉得本Demo好用，请为我加星，非常感谢，🙏！&nbsp;如果您有什么疑问/建议，非常欢迎联系我，🙏！
 
