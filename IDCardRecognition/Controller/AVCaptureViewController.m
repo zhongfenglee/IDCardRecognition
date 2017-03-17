@@ -141,7 +141,8 @@
         AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:&error];
         
         if (error) {
-            NSLog(@"没有摄像头%@",error.localizedDescription);
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+            [self alertControllerWithTitle:@"没有摄像设备" message:error.localizedDescription okAction:okAction cancelAction:nil];
         }else {
             if ([_session canAddInput:input]) {
                 [_session addInput:input];
@@ -204,33 +205,27 @@
     }
 }
 
-#pragma mark - 打开手电筒
--(void)turnTorchOn:(bool)on {
-    self.torchOn = !_torchOn;
+#pragma mark - 打开／关闭手电筒
+-(void)turnOnOrOffTorch {
+    self.torchOn = !self.isTorchOn;
     
-    if (self.device) {
-        if ([self.device hasTorch] && [self.device hasFlash]){
-            [self.device lockForConfiguration:nil];
-            
-            if (_torchOn) {
-                self.navigationItem.rightBarButtonItem.image = [[UIImage imageNamed:@"nav_torch_on"] originalImage];
-                [self.device setTorchMode:AVCaptureTorchModeOn];
-                [self.device setFlashMode:AVCaptureFlashModeOn];
-            } else {
-                self.navigationItem.rightBarButtonItem.image = [[UIImage imageNamed:@"nav_torch_off"] originalImage];
-                [self.device setTorchMode:AVCaptureTorchModeOff];
-                [self.device setFlashMode:AVCaptureFlashModeOff];
-            }
-            
-            [self.device unlockForConfiguration];
-        }else{
-            NSLog(@"初始化失败");
+    if ([self.device hasTorch]){ // 判断是否有闪光灯
+        [self.device lockForConfiguration:nil];// 请求独占访问硬件设备
+        
+        if (self.isTorchOn) {
+            self.navigationItem.rightBarButtonItem.image = [[UIImage imageNamed:@"nav_torch_on"] originalImage];
+            [self.device setTorchMode:AVCaptureTorchModeOn];
+        } else {
+            self.navigationItem.rightBarButtonItem.image = [[UIImage imageNamed:@"nav_torch_off"] originalImage];
+            [self.device setTorchMode:AVCaptureTorchModeOff];
         }
-
-    }else{
-        NSLog(@"没有闪光设备");
+        [self.device unlockForConfiguration];// 请求解除独占访问硬件设备
+    }else {
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+        [self alertControllerWithTitle:@"提示" message:@"您的设备没有闪光设备，不能提供手电筒功能，请检查" okAction:okAction cancelAction:nil];
     }
 }
+
 #pragma mark - view即将出现时
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -242,7 +237,7 @@
     // 每次展现AVCaptureViewController的界面时，都检查摄像头使用权限
     [self checkAuthorizationStatus];
     
-    // 关闭手电筒
+    // rightBarButtonItem设为原样
     self.torchOn = NO;
     self.navigationItem.rightBarButtonItem.image = [[UIImage imageNamed:@"nav_torch_off"] originalImage];
 }
@@ -256,10 +251,6 @@
 //    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor]}];
     
     [self stopSession];
-    
-    // 关闭手电筒
-    self.torchOn = NO;
-    self.navigationItem.rightBarButtonItem.image = [[UIImage imageNamed:@"nav_torch_off"] originalImage];
 }
 
 - (void)viewDidLoad {
@@ -299,15 +290,8 @@
     // 添加关闭按钮
     [self addCloseButton];
     
-    // 添加手电筒Item
-    [self addTorchItem];
-}
-
-#pragma mark - 添加手电筒Item
--(void)addTorchItem {
-    // 默认关闭手电筒
-    self.torchOn = NO;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"nav_torch_off"] originalImage] style:UIBarButtonItemStylePlain target:self action:@selector(turnTorchOn:)];
+    // 添加rightBarButtonItem为打开／关闭手电筒
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:self action:@selector(turnOnOrOffTorch)];
 }
 
 #pragma mark - 添加关闭按钮
@@ -325,6 +309,7 @@
     [self.view addSubview:closeBtn];
 }
 
+#pragma mark 绑定“关闭按钮”的方法
 -(void)close {
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -350,23 +335,23 @@
     }];
 }
 
+#pragma mark 被授权使用相机
+-(void)showAuthorizationAuthorized {
+    [self runSession];
+}
+
 #pragma mark 未被授权使用相机
 -(void)showAuthorizationDenied {
     NSString *title = @"相机未授权";
     NSString *message = @"请到系统的“设置-隐私-相机”中授权此应用使用您的相机";
     
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"去设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        // 跳转到“新浪微盾”隐私设置界面
+        // 跳转到该应用的隐私设授权置界面
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
     }];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}];
-    
-    [self alertControllerWithTitle:title message:message okAction:okAction cancelAction:cancelAction];
-}
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
 
-#pragma mark 被授权使用相机
--(void)showAuthorizationAuthorized {
-    [self runSession];
+    [self alertControllerWithTitle:title message:message okAction:okAction cancelAction:cancelAction];
 }
 
 #pragma mark 使用相机设备受限
@@ -374,16 +359,13 @@
     NSString *title = @"相机设备受限";
     NSString *message = @"请检查您的手机硬件或设置";
     
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-    }];
-    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
     [self alertControllerWithTitle:title message:message okAction:okAction cancelAction:nil];
 }
 
 #pragma mark - 展示UIAlertController
 -(void)alertControllerWithTitle:(NSString *)title message:(NSString *)message okAction:(UIAlertAction *)okAction cancelAction:(UIAlertAction *)cancelAction {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"相机未授权" message:@"请到系统的“设置 - 隐私 - 相机”中授权新浪微盾使用您的相机" preferredStyle:UIAlertControllerStyleAlert okAction:okAction cancelAction:cancelAction];
-    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message okAction:okAction cancelAction:cancelAction];
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
