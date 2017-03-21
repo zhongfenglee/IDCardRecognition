@@ -66,9 +66,9 @@
 }
  */
 
--(NSString *)description {
-    return [NSString stringWithFormat:@"<%@>",@{@"姓名：":_name,@"性别：":_gender,@"民族：":_nation,@"住址：":_address,@"公民身份证：":_num}];
-}
+//-(NSString *)description {
+//    return [NSString stringWithFormat:@"<%@>",@{@"姓名：":_name,@"性别：":_gender,@"民族：":_nation,@"住址：":_address,@"公民身份证：":_num}];
+//}
 
 
 @end

@@ -293,13 +293,32 @@
     [self.view addSubview:IDCardScaningView];
     
     // 设置人脸扫描区域
-    // 为什么做人脸扫描？
-    // 经实践证明，由于预览图层是全屏的，当用户有时没有将身份证对准拍摄框边缘时，也会成功读取身份证上的信息，即也会捕获到不完整的身份证图像。
-    // 因此，为了截取到比较完整的身份证图像，在自定义扫描界面的合适位置上加了一个身份证头像框，让用户将该小框对准身份证上的头像，最终目的是使程序截取到完整的身份证图像。
-    // 当该小框检测到人脸时，再对比人脸区域是否在这个小框内，若在，说明用户的确将身份证头像放在了这个框里，那么此时这一帧身份证图像大小正好合适且完整，接下来才捕获该帧，就获得了完整的身份证截图。（若不在，那么就不捕获此时的图像）
-    // 理解：检测身份证上的人脸是为了获得证上的人脸区域，获得人脸区域是为了希望人脸区域能在小框内，这样的话，才截取到完整的身份证图像。
-    // ps: 如果你不想加入人脸识别这一功能，你的app无需这么精细的话或者你又想读取到身份证反面的信息（签发机关，有效期），请注释掉所有metadataOutput的代码及其下面的那个代理方法（-(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection）即可
-    // 个人认为：有了文字、拍摄区域的提示，99%的用户会主动将身份证和拍摄框边缘对齐，就能够获得完整的身份证图像，不做人脸区域的检测也可以。。。
+    /*
+     
+     为什么做人脸扫描？
+       
+     经实践证明，由于预览图层是全屏的，当用户有时没有将身份证对准拍摄框边缘时，也会成功读取身份证上的信息，即也会捕获到不完整的身份证图像。
+     因此，为了截取到比较完整的身份证图像，在自定义扫描界面的合适位置上加了一个身份证头像框，让用户将该小框对准身份证上的头像，最终目的是使程序截取到完整的身份证图像。
+     当该小框检测到人脸时，再对比人脸区域是否在这个小框内，若在，说明用户的确将身份证头像放在了这个框里，那么此时这一帧身份证图像大小正好合适且完整，接下来才捕获该帧，就获得了完整的身份证截图。（若不在，那么就不捕获此时的图像）
+    
+     理解：检测身份证上的人脸是为了获得证上的人脸区域，获得人脸区域是为了希望人脸区域能在小框内，这样的话，才截取到完整的身份证图像。
+     
+     个人认为：有了文字、拍摄区域的提示，99%的用户会主动将身份证和拍摄框边缘对齐，就能够获得完整的身份证图像，不做人脸区域的检测也可以。。。
+    
+     ps: 如果你不想加入人脸识别这一功能，你的app无需这么精细的话或者你又想读取到身份证反面的信息（签发机关，有效期），请这样做：
+     
+     1、请注释掉所有metadataOutput的代码及其下面的那个代理方法（-(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection）
+     
+     2、请在videoDataOutput的懒加载方法的if(_videoDataOutput == nil){}语句块中添加[_videoDataOutput setSampleBufferDelegate:self queue:self.queue];
+     
+     3、请注释掉AVCaptureVideoDataOutputSampleBufferDelegate下的那个代理方法中的
+     if (self.videoDataOutput.sampleBufferDelegate) {
+         [self.videoDataOutput setSampleBufferDelegate:nil queue:self.queue];
+     }
+     
+     4、运行程序，身份证正反两面皆可被检测到，请查看打印的信息。
+     
+     */
 //    [[NSNotificationCenter defaultCenter] addObserverForName:AVCaptureInputPortFormatDescriptionDidChangeNotification object:nil queue:[NSOperationQueue currentQueue] usingBlock:^(NSNotification* _Nonnull note) {
 //        __weak __typeof__(self) weakSelf = self;
         self.metadataOutput.rectOfInterest = [self.previewLayer metadataOutputRectOfInterestForRect:IDCardScaningView.facePathRect];
@@ -506,7 +525,9 @@
                 }
             }
             
-            if (iDInfo.num.length) {// 读取到身份证信息，实例化出IDInfo对象后，截取身份证的有效区域，获取到图像
+            if (iDInfo) {// 读取到身份证信息，实例化出IDInfo对象后，截取身份证的有效区域，获取到图像
+                NSLog(@"\n正面\n姓名：%@\n性别：%@\n民族：%@\n住址：%@\n公民身份证号码：%@\n\n反面\n签发机关：%@\n有效期限：%@",iDInfo.name,iDInfo.gender,iDInfo.nation,iDInfo.address,iDInfo.num,iDInfo.issue,iDInfo.valid);
+                
                 CGRect effectRect = [RectManager getEffectImageRect:CGSizeMake(width, height)];
                 CGRect rect = [RectManager getGuideFrame:effectRect];
                 
