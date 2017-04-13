@@ -52,3 +52,5 @@ Privacy - Photo Library Usage Description       是否允许访问相册
 如果您觉得本Demo好用，请为我加星，非常感谢，🙏！&nbsp;如果您有什么疑问/建议，非常欢迎联系我，🙏！
 
 QQ/微信: 852354291&nbsp;&nbsp;&nbsp;&nbsp;Email: 852354291@qq.com
+
+Please Star Me, Follow Me, Thank You!😊
