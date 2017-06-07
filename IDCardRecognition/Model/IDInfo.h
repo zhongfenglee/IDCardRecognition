@@ -1,5 +1,5 @@
 //
-//  idInfo.h
+//  IDInfo.h
 //  BankCard
 //
 //  Created by XAYQ-FanXL on 16/7/8.
