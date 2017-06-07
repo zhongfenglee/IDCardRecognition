@@ -4,7 +4,9 @@
 //
 //  Created by zhongfeng1 on 2017/2/21.
 //  Copyright © 2017年 李中峰. All rights reserved.
-//
+
+//  请给个星：https://github.com/zhongfenglee/IDCardRecognition
+//  请关注我：https://github.com/zhongfenglee
 
 #import "IDInfoViewController.h"
 #import "IDInfo.h"
