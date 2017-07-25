@@ -143,6 +143,8 @@
         
         _videoDataOutput.alwaysDiscardsLateVideoFrames = YES;
         _videoDataOutput.videoSettings = @{(id)kCVPixelBufferPixelFormatTypeKey:self.outPutSetting};
+        
+        [_videoDataOutput setSampleBufferDelegate:self queue:self.queue];
     }
     
     return _videoDataOutput;
@@ -321,7 +323,7 @@
      */
 //    [[NSNotificationCenter defaultCenter] addObserverForName:AVCaptureInputPortFormatDescriptionDidChangeNotification object:nil queue:[NSOperationQueue currentQueue] usingBlock:^(NSNotification* _Nonnull note) {
 //        __weak __typeof__(self) weakSelf = self;
-        self.metadataOutput.rectOfInterest = [self.previewLayer metadataOutputRectOfInterestForRect:IDCardScaningView.facePathRect];
+//        self.metadataOutput.rectOfInterest = [self.previewLayer metadataOutputRectOfInterestForRect:IDCardScaningView.facePathRect];
 //    }];
     
     // 添加关闭按钮

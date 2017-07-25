@@ -9,7 +9,7 @@
 #import "IDAuthViewController.h"
 #import "AVCaptureViewController.h"
 
-@interface IDAuthViewController ()
+@interface IDAuthViewController () <UINavigationControllerDelegate>
 
 @end
 
@@ -17,7 +17,7 @@
 
 -(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        [self customBackBarButtonItem];
+        //[self customBackBarButtonItem];
     }
     
     return self;
@@ -47,12 +47,33 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"身份证识别";
 //    self.navigationController.delegate = self;
+    
+    self.navigationController.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - 导航控制器代理方法
+#pragma mark 导航控制器即将展示新的控制器时，会掉用这个方法
+// 要想使用该方法，必须1、控制器遵循UINavigationControllerDelegate；2、控制器代理必须为遵循UINavigationControllerDelegate控制器
+-(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    // 将所有即将展示的控制器的leftBarButtonItem设置为左箭头
+    // 获得导航控制器的根控制器(栈底控制器)
+    UIViewController *rootVC = navigationController.viewControllers[0];
+    
+    if (![viewController isEqual:rootVC]) {// 如果即将展示的控制器不是导航控制器的根控制器
+        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"nav_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    }
+}
+
+-(void)back {
+    // 跳到上一级控制器,self就代表导航控制器NavigationVC
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 #pragma mark - 立即拍摄
 - (IBAction)shoot:(UIButton *)sender {
